@@ -17,11 +17,12 @@
 h1,ovd
 {
     font-size: 1.5em;
+    text-align:center;
 }
 ovd
 {
     
-  background: -webkit-linear-gradient(rgb(255, 60, 0), rgb(255, 196, 2));
+  background: -webkit-linear-gradient(rgb(255, 0, 0), rgb(248, 134, 3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -30,12 +31,23 @@ span{
     margin:20px;
     color:white;
 }
+#logo
+{
+    align-self:center;
+    justify-self:center;
+    max-width:50vw;
+    max-height:50vh;
+    margin:0 auto;
+    text-align:center;
+
+}
 section
 {
-    background-color:rgb(230, 229, 229);
+    background-color:#cccccc;
     padding:1em;
     border-radius:5px;
     max-width:90vw;
+    width:90vw;
     overflow:hidden;
     margin-top:2em;
 }
@@ -58,6 +70,7 @@ body{
 table
 {
     margin-top:40px;
+    width:100%;
     max-width:100vw;
     border-collapse:collapse;
     max-height:100%;
