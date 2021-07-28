@@ -126,6 +126,17 @@ select, select option
 {
     font-size:medium;
 }
+.driveAntigoLogo
+{
+    max-height:2em;
+    background:white;
+    padding:.5em;
+    border-radius:5px;
+}
+.driveAntigoLogo:hover
+{
+    background:rgb(220, 249, 253);
+}
 .btnDownload
 {
     max-width:30px;
