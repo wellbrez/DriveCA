@@ -122,6 +122,10 @@ th
 {
     display:none;
 }
+select
+{
+    font-size:medium;
+}
 .btnDownload
 {
     max-width:30px;
