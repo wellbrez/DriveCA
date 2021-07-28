@@ -16,6 +16,7 @@ xmlhttp.onreadystatechange = function () {
       Planilha.push({materia,tipoDeArquivo,urlArquivo,periodo,dataEnvio,nomeDaOptativa})
     }
     popularTabela(Planilha,"planilha");
+    console.log(pegaQtdEmUmaSemana());
   }
   if(this.readyState==4 && this.status!=200)
   {

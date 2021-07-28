@@ -160,5 +160,41 @@ button
 }
 button:hover
 {
-    background:rgb(209, 248, 248)
+    background:rgb(209, 248, 248);
+}
+
+#bar1,#bar2,#bar3
+{
+    position:fixed;
+    width:100vw;
+    height:1em;
+    background-color:gray;
+    margin-left:0px;
+    display:block;
+}
+#bar3
+{
+    position:fixed;
+    top:1em;
+    height:auto;
+    font-size:medium;
+    color:white;
+    background-color:black
+}
+#bar3text
+{
+    font-size:inherit;
+    padding:inherit;
+    margin:inherit;
+}
+#bar2
+{
+    position:absolute;
+    width:100vw;
+    max-width:0vw;
+    height:1em;
+    margin-left:0px;
+    background:linear-gradient(0deg,red,orange);
+    display:block;
+    transition:max-width 2s;
 }

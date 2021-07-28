@@ -12,3 +12,26 @@ function transformarURLEmIcone(conjuntoURL)
     }
     return textofinal;
 }
+
+function pegaQtdEmUmaSemana()
+{
+    let contador=0;
+    for(let elm of Planilha)
+    {
+        const dataDia = Number(elm.dataEnvio.split(' ')[0].split('/')[0]);
+        const dataMes = Number(elm.dataEnvio.split(' ')[0].split('/')[1]);
+        const dataAno = Number(elm.dataEnvio.split(' ')[0].split('/')[2]);
+        const dataToda = new Date(dataAno,dataMes-1,dataDia);
+        const dataAgora = new Date();
+        const diferencaData = (dataAgora.getTime() - dataToda.getTime())
+        const diferencaEmDias = Math.floor(diferencaData/1000/60/60/24);
+        if(diferencaEmDias<7)
+        {
+            contador++
+        }
+    }
+    document.getElementById("bar2").style.maxWidth= `${contador}vw`;
+    document.getElementsByTagName("aes")[0].innerHTML = " "+contador;
+    return contador;
+
+}
