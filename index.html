@@ -8,7 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <table>
+    <button onclick=togglePlanilha()>Mostrar Planilha Completa</button>
+    <table id=planilhaTable class="hidden">
         <tbody id="planilha">
         <tr>
             <th>Matéria</th>
@@ -21,5 +22,7 @@
     </table>
     
     <script src="index.js"></script>
+    <script src="funcoesPlanilha.js"></script>
+    <script src="trataDados.js"></script>
 </body>
 </html>

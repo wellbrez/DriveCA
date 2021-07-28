@@ -33,7 +33,7 @@ function popularTabela()
         <td>${elm.materia}</td>
         <td>${elm.periodo}</td>
         <td>${elm.tipoDeArquivo}</td>
-        <td>${elm.urlArquivo}</td>
+        <td>${transformarURLEmIcone(elm.urlArquivo)}</td>
         <td>${elm.dataEnvio}</td>
         </tr>
         `
