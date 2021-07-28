@@ -14,6 +14,13 @@
     padding:1vw;
 
 }
+label
+{
+    display:block;
+    margin:auto;
+    margin-bottom:0px;
+    font-size:medium;
+}
 h1,ovd
 {
     font-size: 1.5em;
@@ -126,6 +133,7 @@ button
     padding:auto;
     overflow:hidden;
     outline:none;
+    font-size:medium;
     background:rgb(109, 231, 231);
     border:2px solid rgb(4, 173, 173);
     cursor:pointer;
