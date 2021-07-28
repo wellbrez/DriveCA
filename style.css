@@ -1,13 +1,13 @@
 *{
-    font-family:cursive;
+    font-family:Roboto;
     font-size:x-large;
 }
 #barrafiltro
 {
     display:grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-columns:24% 24% 24% auto;
     grid-template-rows:3em 3em;
-    grid-gap:1em;
+    grid-gap:.2em;
     margin-bottom:1em;
 
 }
@@ -17,6 +17,8 @@ section
     padding:1em;
     border-radius:5px;
     width:40em;
+    max-width:90vw;
+    overflow:hidden;
     margin-top:2em;
 }
 #planilhaCompleta

@@ -11,9 +11,15 @@ xmlhttp.onreadystatechange = function () {
       const urlArquivo = data[i]["gsx$envieoarquivoaqui"]["$t"];
       const periodo = data[i]["gsx$dataemqueomaterialfoidisponibilizado"]["$t"]
       const dataEnvio = data[i]["gsx$carimbodedatahora"]["$t"]
-      Planilha.push({materia,tipoDeArquivo,urlArquivo,periodo,dataEnvio})
+      const nomeDaOptativa = data[i]["gsx$nomedamatériaapenassenãoestiverpresentenalistaacimaoptativaseoutras"]["$t"]
+      
+      Planilha.push({materia,tipoDeArquivo,urlArquivo,periodo,dataEnvio,nomeDaOptativa})
     }
-    popularTabela();
+    popularTabela(Planilha,"planilha");
+  }
+  if(this.readyState==4 && this.status!=200)
+  {
+    window.alert("Houve um erro com a obtenção de dados do drive. Tente reiniciar a página ou verifique sua conexão com a internet");
   }
 };
 
@@ -24,13 +30,18 @@ xmlhttp.open(
 );
 xmlhttp.send();
 
-function popularTabela()
+
+function popularTabela(Planilha,idElemento)
 {
-    planilha = document.getElementById('planilha');
+    if(!Planilha)return;
+    planilha = document.getElementById(idElemento);
+    planilha.innerHTML = "<tr><th>Matéria</th><th>Período</th><th>Tipo de Arquivo</th><th>Link</th><th>Data de envio</th></tr>";
     for(let elm of Planilha)
     {
+      let materia = (elm.nomeDaOptativa)?elm.nomeDaOptativa:elm.materia;
+
         planilha.innerHTML+=`<tr>
-        <td>${elm.materia}</td>
+        <td>${materia}</td>
         <td>${elm.periodo}</td>
         <td>${elm.tipoDeArquivo}</td>
         <td>${transformarURLEmIcone(elm.urlArquivo)}</td>

@@ -15,12 +15,13 @@
         <h3>Como funciona?</h3>
         <p>Você pode enviar arquivos por este formulário: 
     <a href="https://docs.google.com/forms/d/1m4VtEwWxGKSE4Ms9ZHLWCqI3AXvew-p1AvdckTEkoe0/edit?usp=sharing">
-    Form</a>, e a partir do seu envio, a "Grande Planilha" será atualizada, salvando a URL do seu arquivo e categorizando ele, assim perpetuando seu material.</p>
+    Form</a>, e a partir do seu envio, a "Grande Planilha" será atualizada, salvando a URL do seu arquivo e categorizando ele, assim perpetuando seu material.
+<br><br><strong>Seu material será disponibilizado instantanemente após o envio</strong></p>
     <p>Para acesso ao material antigo no drive, utilize <a href="https://bit.ly/Drive-CA">este link</a></p>
     </section>
     <section id=Busca>
         <h2>Realizar busca no novo Drive</h2>
-        <p>*Deixe espaços em branco para filtrar menos.</p>
+        <p>*Selecione os filtros, deixe em branco para não utilizar o filtro</p>
         <p>*Se não achar o que procura, verifique no drive antigo</p>
         <div id=barrafiltro>
             <p>Matéria</p>
@@ -30,23 +31,20 @@
         <select name="materia" id="materia">Matéria</select>
         <select name="periodo" id="periodo">Matéria</select>
         <select name="tipodedoc" id="tipodedoc">Matéria</select>
-        
         <button id=pesquisar>Pesquisar</button>
     </div>
+    <table id=planilhaTableFiltrada>
+        <tbody id="planilhaFiltrada">
+      </tbody>
+    </table>
     </section>
 
     <section id="planilhaCompleta">
         <p>Aqui está a planilha completa</p>
-    <button onclick=togglePlanilha()>Mostrar Planilha Completa</button>
+    <button onclick="togglePlanilha('planilhaTable')">Mostrar Planilha Completa</button>
     <table id=planilhaTable class="hidden">
         <tbody id="planilha">
-        <tr>
-            <th>Matéria</th>
-            <th>Período</th>
-            <th>Tipo de Arquivo</th>
-            <th>Link</th>
-            <th>Data de envio</th>
-        </tr>
+        
       </tbody>
     </table>
 </section>
@@ -54,5 +52,7 @@
     <script src="index.js"></script>
     <script src="funcoesPlanilha.js"></script>
     <script src="trataDados.js"></script>
+    <script src="filtrar.js"></script>
+    <script src="popularSelects.js"></script>
 </body>
 </html>
