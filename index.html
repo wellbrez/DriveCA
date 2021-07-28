@@ -5,9 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Drive CA Civil</title>
 </head>
 <body>
+    <section id="info">
+        <h1>Bem-Vindo ao novo Drive CA-Civil</h1>
+        <h2>Powered by: Wellington Bravin =)</h2>
+
+        <h3>Como funciona?</h3>
+        <p>Você pode enviar arquivos por este formulário: 
+    <a href="https://docs.google.com/forms/d/1m4VtEwWxGKSE4Ms9ZHLWCqI3AXvew-p1AvdckTEkoe0/edit?usp=sharing">
+    Form</a>, e a partir do seu envio, a "Grande Planilha" será atualizada, salvando a URL do seu arquivo e categorizando ele, assim perpetuando seu material.</p>
+    <p>Para acesso ao material antigo no drive, utilize <a href="https://bit.ly/Drive-CA">este link</a></p>
+    </section>
+    <section id=Busca>
+        <h2>Realizar busca no novo Drive</h2>
+        <p>*Deixe espaços em branco para filtrar menos.</p>
+        <p>*Se não achar o que procura, verifique no drive antigo</p>
+        <div id=barrafiltro>
+            <p>Matéria</p>
+            <p>Período</p>
+            <p>Tipo de doc</p>
+            <p></p>
+        <select name="materia" id="materia">Matéria</select>
+        <select name="periodo" id="periodo">Matéria</select>
+        <select name="tipodedoc" id="tipodedoc">Matéria</select>
+        
+        <button id=pesquisar>Pesquisar</button>
+    </div>
+    </section>
+
+    <section id="planilhaCompleta">
+        <p>Aqui está a planilha completa</p>
     <button onclick=togglePlanilha()>Mostrar Planilha Completa</button>
     <table id=planilhaTable class="hidden">
         <tbody id="planilha">
@@ -20,6 +49,7 @@
         </tr>
       </tbody>
     </table>
+</section>
     
     <script src="index.js"></script>
     <script src="funcoesPlanilha.js"></script>
