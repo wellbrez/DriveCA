@@ -11,6 +11,11 @@
     margin-bottom:1em;
 
 }
+span{
+    font-size:small;
+    margin:20px;
+    color:white;
+}
 section
 {
     background-color:rgb(230, 229, 229);
