@@ -50,3 +50,12 @@ function popularTabela(Planilha,idElemento)
         `
     }
 }
+let linkDriveAntigo = document.getElementsByClassName("driveAntigo")
+for(let link of linkDriveAntigo)
+{
+  link.onclick=popupDriveAntigo;
+}
+function popupDriveAntigo()
+{
+  alert("Hey, se você achar o arquivo lá, faz upload nessa nova plataforma por favor!! Agradecemoss!")
+}
