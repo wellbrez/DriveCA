@@ -16,6 +16,7 @@ function transformarURLEmIcone(conjuntoURL)
 function pegaQtdEmUmaSemana()
 {
     let contador=0;
+    let contadorTotal =0;
     for(let elm of Planilha)
     {
         const dataDia = Number(elm.dataEnvio.split(' ')[0].split('/')[0]);
@@ -28,10 +29,13 @@ function pegaQtdEmUmaSemana()
         if(diferencaEmDias<7)
         {
             contador++
+            
         }
+        contadorTotal++
     }
     document.getElementById("bar2").style.maxWidth= `${contador}vw`;
     document.getElementsByTagName("aes")[0].innerHTML = " "+contador;
+    document.getElementsByTagName("tta")[0].innerHTML = " "+contadorTotal;
     return contador;
 
 }
