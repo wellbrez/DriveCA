@@ -198,3 +198,6 @@ button:hover
     display:block;
     transition:max-width 2s;
 }
+a{
+    font-size:medium;
+}

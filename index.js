@@ -7,13 +7,14 @@ xmlhttp.onreadystatechange = function () {
     let i;
     for (i = 0; i < data.length; i++) {
       const materia = data[i]["gsx$matéria"]["$t"];
+      const descricao = data[i]["gsx$descriçãocurtadomaterialenviado"]["$t"];
       const tipoDeArquivo = data[i]["gsx$tipodearquivo"]["$t"];
       const urlArquivo = data[i]["gsx$envieoarquivoaqui"]["$t"];
       const periodo = data[i]["gsx$dataemqueomaterialfoidisponibilizado"]["$t"]
       const dataEnvio = data[i]["gsx$carimbodedatahora"]["$t"]
       const nomeDaOptativa = data[i]["gsx$nomedamatériaapenassenãoestiverpresentenalistaacimaoptativaseoutras"]["$t"]
       
-      Planilha.push({materia,tipoDeArquivo,urlArquivo,periodo,dataEnvio,nomeDaOptativa})
+      Planilha.push({materia,tipoDeArquivo,urlArquivo,periodo,dataEnvio,nomeDaOptativa,descricao})
     }
     popularTabela(Planilha,"planilha");
     console.log(pegaQtdEmUmaSemana());
@@ -45,7 +46,7 @@ function popularTabela(Planilha,idElemento)
         <td>${materia}</td>
         <td>${elm.periodo}</td>
         <td>${elm.tipoDeArquivo}</td>
-        <td>${transformarURLEmIcone(elm.urlArquivo)}</td>
+        <td>${transformarURLEmIcone(elm)}</td>
         <td>${elm.dataEnvio}</td>
         </tr>
         `

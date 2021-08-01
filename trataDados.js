@@ -1,5 +1,7 @@
-function transformarURLEmIcone(conjuntoURL)
+function transformarURLEmIcone(elm)
 {
+    const conjuntoURL = elm.urlArquivo;
+    const descricao = elm.descricao;
     const urls = conjuntoURL.split('https://');
     let textofinal = "";
     caminhoIMG = (urls.length>2)?"random.png":"pdf.jpg";
@@ -8,7 +10,7 @@ function transformarURLEmIcone(conjuntoURL)
     {
         if(!url)continue
         url = "https://"+url;
-        textofinal+=`<a href=${url}>${img}</a>`
+        textofinal+=`<a href=${url}>${img}<br>${elm.descricao}</a>`
     }
     return textofinal;
 }
