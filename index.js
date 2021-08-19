@@ -35,9 +35,8 @@ fetch(
     return;
   })
   .catch((error) => {
-    window.alert(
-      "Houve um erro com a obtenção de dados do drive. Tente reiniciar a página ou verifique sua conexão com a internet"
-    );
+    document.querySelector("error").innerHTML =
+      "Houve um erro com a obtenção de dados do drive.<br>Tente reiniciar a página.<br><br>Se não resolver, você consegue acessar os arquivos manualmente por <a class='altlink' href='https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5iw_Dhl23cFljcfVYY-afx634-1WzHvXnoRd7Ss1n6FnDnZQcqG-tQMsE9rL-J037ZbSTCmQgyXJ5/pubhtml'>este link</a>.<br><br>Utilize Ctrl+F para facilitar sua busca.";
   });
 
 function popularTabela(Planilha, idElemento) {
