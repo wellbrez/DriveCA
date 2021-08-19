@@ -189,3 +189,10 @@ error {
 .altlink:hover {
   color: blueviolet;
 }
+#bar3,
+#bar1 {
+  overflow: hidden;
+}
+.hidden {
+  max-height: 0px;
+}

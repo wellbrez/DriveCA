@@ -1,24 +1,21 @@
 const Planilha = [];
-
-fetch(
-  "https://spreadsheets.google.com/feeds/list/1zQlECCi0lONoDG794Q4E5pDeL0d5DqKw3sQEkjYdSd8/onlvse5/public/values?alt=json"
-)
+fetch("https://api.apispreadsheets.com/data/17100/")
   .then((response) => response.json())
   .then((resposta) => {
-    let data = resposta.feed.entry;
-    console.log(data);
+    console.log(resposta);
+    let data = resposta.data;
     let i;
     for (i = 0; i < data.length; i++) {
-      const materia = data[i]["gsx$matéria"]["$t"];
-      const descricao = data[i]["gsx$descriçãocurtadomaterialenviado"]["$t"];
-      const tipoDeArquivo = data[i]["gsx$tipodearquivo"]["$t"];
-      const urlArquivo = data[i]["gsx$envieoarquivoaqui"]["$t"];
-      const periodo = data[i]["gsx$dataemqueomaterialfoidisponibilizado"]["$t"];
-      const dataEnvio = data[i]["gsx$carimbodedatahora"]["$t"];
+      const materia = data[i]["Matéria"];
+      const descricao = data[i]["Descrição curta do material enviado"];
+      const tipoDeArquivo = data[i]["Tipo de Arquivo"];
+      const urlArquivo = data[i]["Envie o arquivo aqui"];
+      const periodo = data[i]["Data em que o material foi disponibilizado"];
+      const dataEnvio = data[i]["Carimbo de data/hora"];
       const nomeDaOptativa =
         data[i][
-          "gsx$nomedamatériaapenassenãoestiverpresentenalistaacimaoptativaseoutras"
-        ]["$t"];
+          "Nome da matéria (apenas se não estiver presente na lista acima) (optativas e outras)"
+        ];
 
       Planilha.push({
         materia,
@@ -31,12 +28,11 @@ fetch(
       });
     }
     popularTabela(Planilha, "planilha");
-    console.log(pegaQtdEmUmaSemana());
+    pegaQtdEmUmaSemana();
     return;
   })
   .catch((error) => {
-    document.querySelector("error").innerHTML =
-      "Houve um erro com a obtenção de dados do drive.<br>Tente reiniciar a página.<br><br>Se não resolver, você consegue acessar os arquivos manualmente por <a class='altlink' href='https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5iw_Dhl23cFljcfVYY-afx634-1WzHvXnoRd7Ss1n6FnDnZQcqG-tQMsE9rL-J037ZbSTCmQgyXJ5/pubhtml'>este link</a>.<br><br>Utilize Ctrl+F para facilitar sua busca.";
+    document.querySelector("error").classList.remove("hidden");
   });
 
 function popularTabela(Planilha, idElemento) {
